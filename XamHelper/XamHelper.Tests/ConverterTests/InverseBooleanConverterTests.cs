@@ -5,7 +5,7 @@ using XamHelper.Converters;
 namespace XamHelper.Tests.ConverterTests
 {
     [TestFixture]
-    public class InverseBooleanTests
+    public class InverseBooleanConverterTests
     {
         private InverseBooleanConverter _inverseBooleanConverter;
 
