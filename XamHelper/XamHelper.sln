@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamHelper", "XamHelper\XamHelper.csproj", "{0CF76513-DAC6-482B-B3D3-8C335B71C720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamHelper.Tests", "XamHelper.Tests\XamHelper.Tests.csproj", "{F00142C9-73A8-466A-9298-7630128E9476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamHelper.Tests", "XamHelper.Tests\XamHelper.Tests.csproj", "{F00142C9-73A8-466A-9298-7630128E9476}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,7 +20,6 @@ Global
 		{F00142C9-73A8-466A-9298-7630128E9476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F00142C9-73A8-466A-9298-7630128E9476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F00142C9-73A8-466A-9298-7630128E9476}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F00142C9-73A8-466A-9298-7630128E9476}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
