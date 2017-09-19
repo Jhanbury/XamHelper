@@ -6,6 +6,19 @@ namespace XamHelper.Converters
 {
     public class StringToNameConverter : IValueConverter
     {
+        /// <summary>
+        /// Implement this method to convert a string to TitleCase john -> John />.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <param name="targetType">The type to which to convert the value.</param>
+        /// <param name="parameter">A parameter to use during the conversion.</param>
+        /// <param name="culture">The culture to use during the conversion.</param>
+        /// <returns>
+        /// Returns the string in Title Case.
+        /// </returns>
+        /// <remarks>
+        /// To be added.
+        /// </remarks>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var input = value.ToString();

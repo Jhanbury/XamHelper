@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>XamHelper.John</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>John Hanbury</Authors>
     <Description>Useful tools for your xamarinForms application</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <Copyright>Copyright 2017 (c)JohnCorp. All rights reserved.</Copyright>
     <PackageTags>Xamarin Xamarin.Forms</PackageTags>
   </PropertyGroup>
