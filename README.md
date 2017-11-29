@@ -14,3 +14,7 @@ Inverts a Boolean Value.
 Converts any string to Title case "tim cook" -> "Tim Cook".
 ### **CollectionToIntConverter**
 Converts a Collection to an int which represents the number of records in the collection.
+### **DateToFormattedStringConverter**
+Converts a Datetime to a formatted date.
+You can specify your own format using the paramter option.
+There is a default format which is "dd/MM/yyyy".

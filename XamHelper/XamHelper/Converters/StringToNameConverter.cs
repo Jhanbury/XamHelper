@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using Xamarin.Forms;
+using XamHelper.Guards;
 
 namespace XamHelper.Converters
 {
@@ -21,6 +22,7 @@ namespace XamHelper.Converters
         /// </remarks>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            Guard.ThrowIfNull(value, "String");
             var input = value.ToString();
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower());
 
