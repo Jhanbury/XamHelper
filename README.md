@@ -18,3 +18,12 @@ Converts a Collection to an int which represents the number of records in the co
 Converts a Datetime to a formatted date.
 You can specify your own format using the paramter option.
 There is a default format which is "dd/MM/yyyy".
+
+
+## Asynchronous Task Handlers
+### **Task Handler**
+Allows uses to easily Bind Tasks to UI Elements.
+TaskHandler inherits from INotifyPropertyChanged to allow for Binding.
+Task Handler takes in a Generic Parameter which represents the return type of the asynchronous Task.
+It will also capture any exceptions and assign them to the Exception property so that error handling can be performed in the UI rather than alowing Exceptions to cause the app to crash.
+
