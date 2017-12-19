@@ -2,7 +2,7 @@
 A nuget package which provides handy tools for your xamarin forms project
 
 # Nuget:
-[![NuGet](https://img.shields.io/nuget/v/XamHelper.svg?label=NuGet)](https://www.nuget.org/packages/XamHelper) 
+[![NuGet](https://img.shields.io/nuget/v/XamHelper.svg?label=NuGet)](https://www.nuget.org/packages/XamHelper.Forms) 
 
 # Features
 ## Converters
