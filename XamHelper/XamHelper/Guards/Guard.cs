@@ -9,7 +9,7 @@ namespace XamHelper.Guards
         public static void ThrowIfNotDate(object argumentValue, string argumentName)
         {
             ThrowIfNull(argumentValue, argumentName);
-            if (argumentValue.GetType() != typeof(DateTime))
+            if (argumentValue?.GetType() != typeof(DateTime))
             {
                 throw new ArgumentNullException(argumentName);
             }
@@ -26,7 +26,8 @@ namespace XamHelper.Guards
 
         public static void ThrowIfNotString(object argumentValue, string argumentName)
         {
-            if (argumentValue.GetType() != typeof(string))
+            
+            if (argumentValue?.GetType() != typeof(string))
             {
                 throw new ArgumentNullException(argumentName);
             }
