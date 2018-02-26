@@ -30,7 +30,7 @@ namespace XamHelper.Validation
         public void AddValidationRule(IValidationRule<T> rule)
         {
             _validations.Add(rule);
-            RaisePropertyChanged((() => Validations));
+            RaisePropertyChanged(() => Validations);
         }
 
         public List<IValidationRule<T>> Validations => _validations;

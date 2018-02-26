@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using NUnit.Framework.Internal;
 using Xamarin.Forms;
 using XamHelper.Converters;
@@ -27,6 +28,14 @@ namespace XamHelper.Tests.ConverterTests
 
         }
 
+        [Test]
+        public void TestConvertBack()
+        {
+            Assert.Catch<NotImplementedException>(() => _byteArrayToImageConverter.ConvertBack(null, null, null, null));
+        }
+
         
+
+
     }
 }

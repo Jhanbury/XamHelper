@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamHelperSample"
+             xmlns:converters="clr-namespace:XamHelper.Converters;assembly=XamHelper"
+             x:Class="XamHelperSample.MainPage">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Name.Value, Converter={StaticResource StringToNameConverter}}" />
+        <Label Text="{Binding TodaysDate, Converter={StaticResource DateToFormattedStringConverter}}" />
+        <Label Text="{Binding Name.Errors, Converter={StaticResource FirstValidationErrorConverter}}" TextColor="Red"/>
+        <Label Text="{Binding Name.Errors, Converter={StaticResource CollectionToIntConverter}}" TextColor="Red"/>
+        <Button Text="Validate Name" Command="{Binding ValidateCommand}"/>
+    </StackLayout>
+    
+	
+    <!--<Label Text="Test"/>-->
+
+</ContentPage>

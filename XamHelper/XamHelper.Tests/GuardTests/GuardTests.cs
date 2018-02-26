@@ -23,6 +23,12 @@ namespace XamHelper.Tests.GuardTests
             Assert.Catch<ArgumentNullException>(() => Guard.ThrowIfNotString(null, "Test"));
         }
         [Test]
+        public void TestThrowIfNotString_success()
+        {
+            //act + assert
+            Assert.DoesNotThrow(() => Guard.ThrowIfNotString("success", "Test"));
+        }
+        [Test]
         public void TestThrowIfNotString_int()
         {
             //act + assert
@@ -38,7 +44,13 @@ namespace XamHelper.Tests.GuardTests
         public void TestThrowIfNotDate()
         {
             //act + assert
-            Assert.Catch<ArgumentNullException>(() => Guard.ThrowIfNotString(null, "Test"));
+            Assert.Catch<ArgumentNullException>(() => Guard.ThrowIfNotDate(null, "Test"));
+        }
+        [Test]
+        public void TestThrowIfNotDate_string()
+        {
+            //act + assert
+            Assert.Catch<ArgumentNullException>(() => Guard.ThrowIfNotDate("name", "Test"));
         }
     }
 }

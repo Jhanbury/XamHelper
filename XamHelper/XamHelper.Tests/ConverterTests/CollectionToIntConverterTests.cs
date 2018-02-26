@@ -17,7 +17,7 @@ namespace XamHelper.Tests.ConverterTests
             _collectionToIntConverter = new CollectionToIntConverter();
         }
 
-        
+        [Test]
         public void TestConvert()
         {
             var list = new List<int>
@@ -29,6 +29,31 @@ namespace XamHelper.Tests.ConverterTests
 
         }
 
-        
+        [Test]
+        public void TestConvert_null()
+        {
+            List list = null;
+            Assert.Catch<ArgumentNullException>(() => _collectionToIntConverter.Convert(list, null, null, null));
+            
+
+        }
+        [Test]
+        public void TestConvertBack()
+        {
+            List list = null;
+            Assert.Catch<NotImplementedException>(() => _collectionToIntConverter.ConvertBack(list, null, null, null));
+
+
+        }
+        [Test]
+        public void TestConvert_nonlist()
+        {
+            var actual = _collectionToIntConverter.Convert("test", null, null, null);
+            Assert.AreEqual(0,actual);
+
+
+        }
+
+
     }
 }

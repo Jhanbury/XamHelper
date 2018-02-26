@@ -36,6 +36,14 @@ namespace XamHelper.Tests.ConverterTests
             Assert.AreEqual(Expected, actual);
 
         }
+        [Test]
+        public void TestConvertBack()
+        {
+            
+            Assert.Catch<NotImplementedException>(() => _dateConverter.ConvertBack(null, null, null, null));
+
+
+        }
 
 
     }

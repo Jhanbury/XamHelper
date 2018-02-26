@@ -26,7 +26,6 @@ namespace XamHelper.Guards
 
         public static void ThrowIfNotString(object argumentValue, string argumentName)
         {
-            
             if (argumentValue?.GetType() != typeof(string))
             {
                 throw new ArgumentNullException(argumentName);

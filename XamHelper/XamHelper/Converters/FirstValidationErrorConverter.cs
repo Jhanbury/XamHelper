@@ -1,25 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
+using System.Linq;
 using Xamarin.Forms;
-using XamHelper.Guards;
 
 namespace XamHelper.Converters
 {
-    public class ByteArrayToImageConverter : IValueConverter
+    public class FirstValidationErrorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Guard.ThrowIfNull(value, "Image byteArray");
-            var array = (byte[]) value;
-            return ImageSource.FromStream((() => new MemoryStream(array)));
-
+            ICollection<string> errors = value as ICollection<string>;
+            return errors != null && errors.Count > 0 ? errors.ElementAt(0) : null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
-
     }
 }
