@@ -19,6 +19,85 @@ Converts a Datetime to a formatted date.
 You can specify your own format using the paramter option.
 There is a default format which is "dd/MM/yyyy".
 
+## Validation
+The validation namesspace has been added to assist developers in handling the common scenario of Validation.
+### Usage:
+In your ViewModel, foreach property youwish to validate create a Validatablobject of that type:
+```
+        private ValidatableObject<string> _name;
+        public ValidatableObject<string> Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                RaisePropertyChanged(()=> Name);
+            } 
+        }
+```
+You can then add rules to the Validatable object like so:
+```
+      Name = new ValidatableObject<string>();
+      Name.AddValidationRule(new IsNotNullOrEmptyRule<string>("Name cannot be null"));
+      Name.AddValidationRule(new IsValidEmailValidationRule("Invalid Email"));
+
+```
+### Validate
+To validate the Value call the validate method:
+```
+  Name.Validate();
+```
+
+### XAML
+We can Bind the value to XAMl by using the Value property:
+```
+<Label Text="{Binding Name.Value, Converter={StaticResource StringToNameConverter}}" />
+```
+
+
+### IValidationRule
+Validation rules are defeined by the IValdationRule interface:
+
+```
+      public interface IValidationRule<T>
+      {
+          string ValidationMessage { get; set; }
+
+          bool Check(T value);
+      }
+```
+You can create your own validation ruels by implementing this interface:
+```
+    public class IsNotNullOrEmptyRule<T> : IValidationRule<T>
+    {
+        private string _validationMessage;
+
+        public IsNotNullOrEmptyRule(string message)
+        {
+            ValidationMessage = message;
+        }
+
+        public string ValidationMessage
+        {
+            get => _validationMessage;
+            set => _validationMessage = value;
+        }
+
+        public bool Check(T value)
+        {
+            if (value == null)
+            {
+                return false;
+            }
+
+            var str = value as string;
+
+            return !string.IsNullOrWhiteSpace(str);
+        }
+    }
+ ```
+ 
+            
 
 ## Asynchronous Task Handlers
 ### **Task Handler**
