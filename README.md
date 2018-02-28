@@ -1,3 +1,4 @@
+
 # XamHelper
 A nuget package which provides handy tools for your xamarin forms project
 
@@ -5,6 +6,7 @@ A nuget package which provides handy tools for your xamarin forms project
 [![NuGet](https://img.shields.io/nuget/vpre/XamHelper.svg?label=NuGet)](https://www.nuget.org/packages/XamHelper.Forms) 
 
 # Features
+
 ## Converters
 ### **ByteArrayToImageConverter**
 Converts a ByteArray in to an Image Source.
@@ -19,10 +21,14 @@ Converts a Datetime to a formatted date.
 You can specify your own format using the paramter option.
 There is a default format which is "dd/MM/yyyy".
 
+
+
+
 ## Validation
 The validation namesspace has been added to assist developers in handling the common scenario of Validation.
+This implementation follows the patterns described in the following [article](https://developer.xamarin.com/guides/xamarin-forms/enterprise-application-patterns/validation/)
 ### Usage:
-In your ViewModel, foreach property youwish to validate create a Validatablobject of that type:
+In your ViewModel, foreach property you wish to validate create a ValidatableObject of that type:
 ```
         private ValidatableObject<string> _name;
         public ValidatableObject<string> Name
@@ -49,14 +55,14 @@ To validate the Value call the validate method:
 ```
 
 ### XAML
-We can Bind the value to XAMl by using the Value property:
+We can Bind the value to XAML by using the Value property:
 ```
-<Label Text="{Binding Name.Value, Converter={StaticResource StringToNameConverter}}" />
+	<Label Text="{Binding Name.Value, Converter={StaticResource StringToNameConverter}}" />
 ```
 
 
 ### IValidationRule
-Validation rules are defeined by the IValdationRule interface:
+Validation rules are defined by the IValdationRule interface:
 
 ```
       public interface IValidationRule<T>
@@ -66,7 +72,7 @@ Validation rules are defeined by the IValdationRule interface:
           bool Check(T value);
       }
 ```
-You can create your own validation ruels by implementing this interface:
+You can create your own validation rules by implementing this interface:
 ```
     public class IsNotNullOrEmptyRule<T> : IValidationRule<T>
     {
@@ -97,7 +103,13 @@ You can create your own validation ruels by implementing this interface:
     }
  ```
  
-            
+      
+
+
+----------
+
+
+      
 
 ## Asynchronous Task Handlers
 ### **Task Handler**
